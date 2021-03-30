@@ -4,7 +4,13 @@ import java.awt.event.*;
 
 public class Main implements Runnable, ActionListener{
 
-  // Class Variables  
+  // Class Variables
+  // main panel to store everything
+  JPanel mainPanel;
+  // components
+  JButton startOrStop;
+  JLabel instructionsLabel;
+
   
 
 
@@ -14,10 +20,24 @@ public class Main implements Runnable, ActionListener{
     JFrame frame = new JFrame("Dinosaur Game");
     // Makes the X button close the program
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    // makes the windows 800 pixel wide by 600 pixels tall
-    frame.setSize(800,600);
+    // makes the windows 800 pixel wide by 500 pixels tall
+    frame.setSize(800,500);
     // shows the window
     frame.setVisible(true);
+
+    // create main panel to add components
+    mainPanel = new JPanel();
+    // get rid of the layout manager
+    mainPanel.setLayout(null);
+
+    // create the instruction label
+    instructionsLabel = new JLabel ("Press Space to jump and Q to add cactus");
+    instructionsLabel.setBounds(50, 390, 500, 45);
+    
+    // add components to the main panel
+    mainPanel.add(instructionsLabel);
+    // add panel to the frame
+    frame.add(mainPanel);
  
     
 
